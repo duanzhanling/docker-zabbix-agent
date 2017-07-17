@@ -1,7 +1,7 @@
 FROM centos:centos7
 MAINTAINER Przemyslaw Ozgo linux@ozgo.info
 
-ENV ZABBIX_VERSION=3.4 \
+ENV ZABBIX_VERSION=3.4.0alpha1 \
     ZABBIX_SERVER=127.0.0.1 \
     HOSTNAME=zabbix.agent \
     HOST_METADATA=zabbix.agent \
@@ -9,7 +9,7 @@ ENV ZABBIX_VERSION=3.4 \
 
 RUN \
   yum clean all && yum makecache && \
-  yum install --nogpgcheck -y svn automake gcc make iproute && \
+  yum install --nogpgcheck -y svn automake gcc make iproute pcre-devel&& \
   svn co svn://svn.zabbix.com/tags/${ZABBIX_VERSION} /usr/local/src/zabbix && \
   cd /usr/local/src/zabbix && \
   ./bootstrap.sh && \
