@@ -1,7 +1,7 @@
 FROM centos:centos7
 MAINTAINER Przemyslaw Ozgo linux@ozgo.info
 
-ENV ZABBIX_VERSION=3.0.1 \
+ENV ZABBIX_VERSION=3.4 \
     ZABBIX_SERVER=127.0.0.1 \
     HOSTNAME=zabbix.agent \
     HOST_METADATA=zabbix.agent \
